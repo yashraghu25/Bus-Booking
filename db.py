@@ -1,0 +1,21 @@
+import sqlite3
+con = sqlite3.Connection('bus_booking')
+cur = con.cursor()
+
+
+cur.execute('insert into operator values(1,"kamla","india gate","kamla@gmail.com",9988774455)')
+cur.execute('insert into operator values(2,"Rayeen","kashmir gate","Rayeen@gmail.com",6688774455)')
+cur.execute('select * from operator')
+cur.execute('insert into buses values(1,"Non-Ac",50,500,1,1)')
+cur.execute('insert into buses values(2,"Ac",50,700,2,2)')
+cur.execute('select * from buses')
+cur.execute('insert into runs values(1,2022/05/03,50)')
+cur.execute('insert into runs values(2,2022/05/05,50)')
+cur.execute('select * from runs')
+cur.execute('insert into route values(1,1,"indore")')
+cur.execute('insert into route values(1,2,"guna")')
+cur.execute('insert into route values(2,1,"jhansi")')
+cur.execute('insert into route values(2,2,"bhopal")')
+cur.execute('select * from route')
+res=cur.fetchall()
+print(res)
